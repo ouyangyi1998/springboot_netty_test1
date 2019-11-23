@@ -7,7 +7,7 @@
 - 解决拆包
   - 在Server服务端使用字节解码器 LineBasedFrameDecoder 之后。
   - 通过设置最大字节码来解决拆包的问题（不能设置太大，不然会翻车）
-- 还可以通过HttpObjectAggregator 来解决粘包拆包的问题,ph.addLast("aggregator",new HttpObjectAggregator(10*1024*1024));
+- 还可以通过HttpObjectAggregator 来解决粘包拆包的问题,ph.addLast("aggregator",new HttpObjectAggregator(10×1024×1024));
     - 如果对于单条HTTP消息你不想处理多个消息对象，你可以传入 HttpObjectAggregator 到pipline中。
     - HttpObjectAggregator 会将多个消息对象转变为单个 FullHttpRequest 或者 FullHttpResponse。
     - 但是依然有拆包现象，效果一般。。。
